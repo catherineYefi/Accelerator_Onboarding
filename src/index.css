@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink-950 text-fg font-sans antialiased;
+  font-size: 15px;
+  line-height: 1.55;
+  min-height: 100dvh;
+}
+
+/* Мягкое свечение фона, как в презентации */
+.bg-glow {
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(230, 242, 124, 0.07), transparent 60%),
+    radial-gradient(800px 400px at -10% 10%, rgba(255, 255, 255, 0.04), transparent 60%),
+    #0b0c0d;
+}
+
+.h-display {
+  @apply font-display font-light tracking-tight;
+  line-height: 1.15;
+}
+.h-display b,
+.h-display strong {
+  @apply font-semibold;
+}
+
+.label-caps {
+  @apply text-[11px] font-semibold uppercase text-lime;
+  letter-spacing: 0.12em;
+}
+
+.card {
+  @apply rounded-2xl border border-line bg-ink-900;
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise {
+  animation: rise 0.32s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.collapse-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+.collapse-grid[data-open='true'] {
+  grid-template-rows: 1fr;
+}
+.collapse-grid > div {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
