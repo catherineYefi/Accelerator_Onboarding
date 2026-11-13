@@ -44,11 +44,19 @@ function NowCard({ go }) {
 
   let eyebrow, title, text, cta
   if (now.phase === 'before') {
-    eyebrow = 'До старта'
-    title = `${now.daysLeft} ${plural(now.daysLeft, 'день', 'дня', 'дней')}`
-    text = `Welcome-встреча — ${formatDay(program.start, { weekday: true })}. Пока пройдите стартовый чек-лист: с ним оргнеделя пройдёт быстрее.`
-    cta = { label: 'Весь маршрут', onClick: () => go('route') }
-  } else if (now.phase === 'holiday') {
+    return (
+      <div className="flex items-center gap-3 rounded-2xl border border-lime-line bg-lime-soft px-4 py-3">
+        <Icon name="CalendarDays" size={18} className="flex-shrink-0 text-lime" />
+        <p className="text-[14px] leading-snug">
+          <b className="font-semibold">
+            До старта {now.daysLeft} {plural(now.daysLeft, 'день', 'дня', 'дней')}.
+          </b>{' '}
+          <span className="text-fg-2">Welcome-встреча — {formatDay(program.start, { weekday: true })}.</span>
+        </p>
+      </div>
+    )
+  }
+  if (now.phase === 'holiday') {
     eyebrow = 'Праздники · встреч нет'
     title = 'Ведёте РНП и P&L сами'
     text = `Следующая встреча — ${formatDay(now.next.date, { weekday: true })}: ${now.next.title.toLowerCase()}.`
@@ -143,30 +151,32 @@ function CheckItem({ item, index, checked, onToggle, go }) {
 
   return (
     <li className={`card transition ${checked ? 'border-transparent bg-ink-900/50' : ''}`}>
-      <div className="flex items-start gap-3 p-3.5">
-        <button
-          type="button"
-          role="checkbox"
-          aria-checked={checked}
-          aria-label={`${item.title}: ${checked ? 'выполнено' : 'не выполнено'}`}
-          onClick={onToggle}
-          className="focus-ring -m-1.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl"
+      <button
+        type="button"
+        role="checkbox"
+        aria-checked={checked}
+        onClick={onToggle}
+        className="focus-ring flex w-full items-start gap-3 rounded-2xl px-3.5 pb-1 pt-3.5 text-left"
+      >
+        <span
+          className={`mt-[-2px] flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg border text-[12px] font-bold transition ${
+            checked ? 'border-lime bg-lime text-ink-950' : 'border-fg-3/50 text-fg-3'
+          }`}
+          aria-hidden="true"
         >
-          <span
-            className={`flex h-7 w-7 items-center justify-center rounded-lg border text-[12px] font-bold transition ${
-              checked ? 'border-lime bg-lime text-ink-950' : 'border-fg-3/50 text-fg-3'
-            }`}
-          >
-            {checked ? <Icon name="Check" size={16} strokeWidth={3} /> : index}
+          {checked ? <Icon name="Check" size={16} strokeWidth={3} /> : index}
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className={`block text-[15px] font-semibold leading-snug ${checked ? 'text-fg-3 line-through decoration-fg-3/60' : ''}`}>
+            {item.title}
           </span>
-        </button>
-        <div className="min-w-0 flex-1 pt-0.5">
-          <button type="button" onClick={onToggle} className="block text-left">
-            <span className={`block text-[15px] font-semibold leading-snug ${checked ? 'text-fg-3 line-through decoration-fg-3/60' : ''}`}>
-              {item.title}
-            </span>
-          </button>
-          {!checked && <p className="mt-1 text-[13.5px] leading-relaxed text-fg-2">{item.sub}</p>}
+          {!checked && <span className="mt-1 block text-[13.5px] leading-relaxed text-fg-2">{item.sub}</span>}
+          {checked && <span className="sr-only">выполнено</span>}
+        </span>
+      </button>
+      <div className="flex items-start gap-3 px-3.5 pb-3.5">
+        <span className="w-7 flex-shrink-0" />
+        <div className="min-w-0 flex-1">
 
           {!checked && (item.action || item.vizitka) && (
             <div className="mt-3 flex flex-wrap gap-2">
@@ -256,7 +266,7 @@ function Roles() {
 function Agreements() {
   return (
     <section>
-      <SectionTitle eyebrow="Договорённости">Что нужно от вас</SectionTitle>
+      <SectionTitle eyebrow="Договорённости">Ритм работы</SectionTitle>
       <div className="card divide-y divide-line">
         {agreements.map((a) => (
           <div key={a.title} className="p-4">

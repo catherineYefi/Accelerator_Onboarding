@@ -91,7 +91,7 @@ function Faq({ item }) {
         <span className="flex-1 text-[14.5px] font-semibold leading-snug">{item.q}</span>
         <Icon name="ChevronDown" size={18} className={`mt-0.5 flex-shrink-0 text-fg-3 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
-      <div className="collapse-grid" data-open={open}>
+      <div className="collapse-grid" data-open={open} {...(!open && { inert: '' })}>
         <div>
           <p className="px-4 pb-4 text-[13.5px] leading-relaxed text-fg-2">{item.a}</p>
         </div>

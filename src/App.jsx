@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { program, draftTodos } from './data/content.js'
+import { program, draftTodos, links } from './data/content.js'
 import { useHashRoute, isDraft } from './lib.js'
 import { Icon } from './components/ui.jsx'
 import Start from './screens/Start.jsx'
@@ -39,6 +39,18 @@ export default function App() {
               <span className="block text-[11px] text-fg-3">{program.flow}</span>
             </span>
           </button>
+
+          {links.manager && (
+            <a
+              href={links.manager}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring order-last inline-flex min-h-[40px] items-center gap-1.5 rounded-lg border border-line px-3 text-[13px] font-semibold text-fg-2 hover:text-fg md:order-none"
+            >
+              <Icon name="MessageCircle" size={16} />
+              Вопрос
+            </a>
+          )}
 
           {/* Навигация на широком экране */}
           <nav className="hidden items-center gap-1 md:flex" aria-label="Разделы">

@@ -85,7 +85,6 @@ function Dot({ status, holidayStep }) {
   if (status === 'current')
     return (
       <span className="relative mt-4 flex h-6 w-6 flex-shrink-0 items-center justify-center">
-        <span className="absolute inset-0 animate-ping rounded-full bg-lime/30" />
         <span className="h-3.5 w-3.5 rounded-full bg-lime ring-4 ring-lime/20" />
       </span>
     )
@@ -129,7 +128,7 @@ function StageCard({ stage, status, open, onToggle, go }) {
         />
       </button>
 
-      <div className="collapse-grid" data-open={open} id={panelId}>
+      <div className="collapse-grid" data-open={open} id={panelId} {...(!open && { inert: '' })}>
         <div>
           <div className="space-y-4 border-t border-line px-4 pb-4 pt-4">
             {stageEvents.length > 0 && (
