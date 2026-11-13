@@ -2,6 +2,9 @@ import React from 'react'
 import { bonuses, bonusStatus } from '../data/content.js'
 import { Icon, LinkButton, Pill } from '../components/ui.jsx'
 
+// Сначала то, чем можно пользоваться сейчас
+const ORDER = { available: 0, request: 1, soon: 2 }
+
 export default function Bonuses({ go }) {
   return (
     <div className="mx-auto max-w-3xl">
@@ -14,7 +17,7 @@ export default function Bonuses({ go }) {
       </p>
 
       <div className="mt-6 grid gap-2 sm:grid-cols-2">
-        {bonuses.map((b) => {
+        {[...bonuses].sort((a, b) => ORDER[a.status] - ORDER[b.status]).map((b) => {
           const st = bonusStatus[b.status]
           return (
             <div key={b.id} className={`card flex flex-col p-4 ${b.status === 'available' ? 'border-lime-line' : ''}`}>
@@ -30,6 +33,7 @@ export default function Bonuses({ go }) {
               </div>
               <p className="text-[15px] font-semibold leading-snug">{b.title}</p>
               <p className="mt-1 flex-1 text-[13.5px] leading-relaxed text-fg-2">{b.text}</p>
+              {b.note && <p className="mt-2 text-[12.5px] text-fg-3">{b.note}</p>}
               {b.action && (
                 <div className="mt-3">
                   {b.action.type === 'tab' ? (

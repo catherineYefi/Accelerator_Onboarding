@@ -32,17 +32,24 @@ export const links = {
 
   videoAboutShort: null, // Евгений Дубровин о программе, 1,5 мин
   videoAboutFull: null, // Евгений Дубровин о программе, 6 мин
-  videoRnp: null, // эфир о РНП
+  videoRnp: 'https://get-nechto.ru/pl/teach/control/lesson/view?id=344860746', // эфир Е. Дубровина и А. Цветкова
   videoDecomp: null, // бизнес-инженер о декомпозиции
 
-  tplRnp: null,
-  tplPl: null,
-  tplDecomp: null,
+  tplRnp: 'https://docs.google.com/spreadsheets/d/1prVvs1oQsoFoq9f1PpVlC_BePd_Qt9EyPYU6LCOAFXQ/edit?gid=1864750681#gid=1864750681',
+  tplPl: 'https://docs.google.com/spreadsheets/d/1aoNaD2_l8vhGPHdfm2uZTA6-vI_ueZNg2exyNk8jcEY/edit?gid=1150867648#gid=1150867648',
+  tplDecomp: 'https://docs.google.com/spreadsheets/d/1ujHitsLn0b0mmvwJ-YUYQYSy8dQwjAeo81jL0GICGeE/edit?gid=2034911968#gid=2034911968',
   tplFinplan: null,
   tplFinmodel: null,
   tplSs: null,
   plMaterials: null,
   holidayGuide: null,
+
+  nechtoBase: 'https://get-nechto.ru/wisdom-base',
+  mindloomBot: 'https://t.me/mindloom_report_bot',
+  mastermindBot: 'https://t.me/mmmd_1bot',
+  hiringMaterials: null,
+  ciAgent: null,
+  marketAgent: null,
 }
 
 // ─── Стартовый чек-лист ─────────────────────────────────────────
@@ -193,7 +200,7 @@ export const stages = [
     artifact: { title: 'РНП', text: 'Метрики, рычаги, нормативы, план и факт.' },
     bi: ['Факт РНП с командой'],
     materials: [
-      { type: 'video', title: 'Эфир о РНП', linkKey: 'videoRnp', hint: 'Посмотрите до встречи 1' },
+      { type: 'video', title: 'РНП: эфир Евгения Дубровина и А. Цветкова', linkKey: 'videoRnp' },
       { type: 'template', title: 'Шаблон РНП', linkKey: 'tplRnp' },
     ],
   },
@@ -303,7 +310,17 @@ export const bonuses = [
     icon: 'MessageCircle',
     title: 'Речевой анализатор Mindloom',
     text: 'Определяет паттерны, блоки, страхи, ограничения и точки роста по вашей речи и письму.',
-    status: 'soon',
+    status: 'available',
+    action: { type: 'link', linkKey: 'mindloomBot', label: 'Открыть бота' },
+  },
+  {
+    id: 'mastermind-bot',
+    icon: 'Sparkles',
+    title: 'Бот «Мастер Майнд»',
+    text: 'Разбирает ваш бизнес по методике мастермайнда Михаила Дашкиева.',
+    status: 'available',
+    action: { type: 'link', linkKey: 'mastermindBot', label: 'Открыть бота' },
+    note: 'Пароль для входа выдаёт менеджер потока.',
   },
   {
     id: 'md-hiring',
@@ -315,10 +332,10 @@ export const bonuses = [
   {
     id: 'nechto',
     icon: 'BookOpen',
-    title: 'Материалы из «Нечто»',
-    text: 'Любые материалы под ваш запрос: маркетинг, операционка, команда.',
-    status: 'request',
-    action: { type: 'link', linkKey: 'manager', label: 'Запросить' },
+    title: 'База знаний «Нечто»',
+    text: 'Материалы «Нечто»: маркетинг, операционка, команда.',
+    status: 'available',
+    action: { type: 'link', linkKey: 'nechtoBase', label: 'Открыть базу' },
   },
 ]
 
@@ -342,7 +359,7 @@ export const library = [
     items: [
       { type: 'video', title: 'Евгений Дубровин о программе', meta: '1,5 мин', linkKey: 'videoAboutShort' },
       { type: 'video', title: 'Евгений Дубровин о программе, полная версия', meta: '6 мин', linkKey: 'videoAboutFull' },
-      { type: 'video', title: 'Эфир о РНП', linkKey: 'videoRnp' },
+      { type: 'video', title: 'РНП: эфир Евгения Дубровина и А. Цветкова', linkKey: 'videoRnp' },
       { type: 'video', title: 'Бизнес-инженер о декомпозиции', linkKey: 'videoDecomp' },
     ],
   },
@@ -412,23 +429,25 @@ export const faq = [
 
 // ─── Черновик: что ещё нужно получить (видно только с ?draft) ───
 export const draftTodos = [
-  { where: 'Старт', text: 'Ссылка на NDA (Аня переделывает под акселератор)' },
+  { where: 'Старт', text: 'NDA — Аня даст в понедельник' },
   { where: 'Старт', text: 'Ссылка на чат группы или как её получают' },
   { where: 'Старт', text: 'Как подключить 1–3 сотрудников: в чат, к материалам' },
   { where: 'Старт', text: 'Как записаться к коучу' },
-  { where: 'Старт', text: 'Контакт менеджера потока (для вопросов и запросов материалов)' },
+  { where: 'Старт', text: 'Контакт менеджера потока (кнопка «Вопрос», пароль к боту «Мастер Майнд»)' },
   { where: 'Старт', text: 'Видео Евгения Дубровина о программе (1,5 и 6 мин)' },
-  { where: 'Воркбук', text: 'Ссылка на воркбук и формат (копия Google-таблицы?)' },
+  { where: 'Воркбук', text: 'Воркбук — после утверждения трекерами и БИ, ориентир понедельник' },
   { where: 'Воркбук', text: 'Срок сдачи и куда отправлять; кто читает — трекер, БИ' },
-  { where: 'Воркбук', text: 'Точный список полей — по слайду 6 шаблона презентации к СС' },
-  { where: 'Воркбук', text: 'Подтвердить: шаблоны заранее не даём на заполнение, только превью' },
   { where: 'Маршрут', text: 'Рычаги: встреча 4 или 6–8? В заметках к календарю «на 4 встрече рычаги сносим»' },
-  { where: 'Маршрут', text: 'Видео: эфир о РНП (уточнить, с кем эфир Дубровина), видео БИ о декомпозиции' },
-  { where: 'Маршрут', text: 'Шаблоны: РНП, P&L, декомпозиция, финплан, финмодель, презентация к СС' },
-  { where: 'Маршрут', text: 'Материалы по P&L' },
-  { where: 'Маршрут', text: 'Инструкция на праздники 29.12–11.01' },
-  { where: 'Бонусы', text: 'Для каждого бонуса: ссылка или способ выдачи и когда открывается' },
-  { where: 'Бонусы', text: 'Закрытые материалы фонда и МД — только через закрытую папку или чат, не публичной ссылкой' },
-  { where: 'Бонусы', text: 'Бот Ника @mmmd_1bot — даём ли этому потоку' },
+  { where: 'Маршрут', text: 'Видео РНП и база «Нечто» на GetCourse: есть ли у участников акселератора доступ к школе?' },
+  { where: 'Маршрут', text: 'Видео БИ о декомпозиции — запрошено у Борониной' },
+  { where: 'Маршрут', text: 'Шаблон финплана — запрошен у Борониной' },
+  { where: 'Маршрут', text: 'Шаблон финмодели — в списке Ани нет' },
+  { where: 'Маршрут', text: 'Шаблон презентации к стратсессии — адаптация с Ультимы, ориентир понедельник' },
+  { where: 'Маршрут', text: 'Материалы по P&L (кроме шаблона) — нужны или нет' },
+  { where: 'Маршрут', text: 'Инструкция на праздники 29.12–11.01 — в списке Ани нет' },
+  { where: 'Бонусы', text: 'ИИ-агенты конкурентной разведки и анализа рынка — ждём' },
+  { where: 'Бонусы', text: 'Материалы Дашкиева по найму топов — запрошены' },
+  { where: 'Бонусы', text: 'Закрытые материалы фонда — есть на слайде бонусов, в списке Ани нет' },
+  { where: 'Бонусы', text: 'Бот «Мастер Майнд»: на какой срок доступ' },
   { where: 'Команда', text: 'Кто ведёт какую группу; что значит «премиум-трекер»' },
 ]
