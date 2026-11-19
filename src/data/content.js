@@ -35,10 +35,10 @@ export const links = {
   videoRnp: 'https://get-nechto.ru/pl/teach/control/lesson/view?id=344860746', // эфир Е. Дубровина и А. Цветкова
   videoDecomp: null, // бизнес-инженер о декомпозиции
 
-  tplRnp: 'https://docs.google.com/spreadsheets/d/1prVvs1oQsoFoq9f1PpVlC_BePd_Qt9EyPYU6LCOAFXQ/edit?gid=1864750681#gid=1864750681',
-  tplPl: 'https://docs.google.com/spreadsheets/d/1aoNaD2_l8vhGPHdfm2uZTA6-vI_ueZNg2exyNk8jcEY/edit?gid=1150867648#gid=1150867648',
-  tplDecomp: 'https://docs.google.com/spreadsheets/d/1ujHitsLn0b0mmvwJ-YUYQYSy8dQwjAeo81jL0GICGeE/edit?gid=2034911968#gid=2034911968',
-  tplFinplan: null,
+  tplRnp: 'https://docs.google.com/spreadsheets/d/1JVhGIIANmJ4-waN-NNmmcS-AFHbmEUtDrSW5U6Cuzg4/edit?usp=drivesdk',
+  tplPl: 'https://docs.google.com/spreadsheets/d/1JwsukVx4D4s_JnAYQvfPWZv02NyGEu2y3Cjc8r7x0sg/edit?usp=drivesdk',
+  tplDecomp: 'https://docs.google.com/spreadsheets/d/1v6zaA5cKBbt_BgLK4WboDbGB9l8-Z6I0dFTzs-2QBcI/edit?usp=drivesdk', // один файл с финпланом
+  tplFinplan: 'https://docs.google.com/spreadsheets/d/1v6zaA5cKBbt_BgLK4WboDbGB9l8-Z6I0dFTzs-2QBcI/edit?usp=drivesdk', // «Финплан + Декомпозиция»
   tplFinmodel: null,
   tplSs: null,
   plMaterials: null,
@@ -440,7 +440,6 @@ export const draftTodos = [
   { where: 'Маршрут', text: 'Рычаги: встреча 4 или 6–8? В заметках к календарю «на 4 встрече рычаги сносим»' },
   { where: 'Маршрут', text: 'Видео РНП и база «Нечто» на GetCourse: есть ли у участников акселератора доступ к школе?' },
   { where: 'Маршрут', text: 'Видео БИ о декомпозиции — запрошено у Борониной' },
-  { where: 'Маршрут', text: 'Шаблон финплана — запрошен у Борониной' },
   { where: 'Маршрут', text: 'Шаблон финмодели — в списке Ани нет' },
   { where: 'Маршрут', text: 'Шаблон презентации к стратсессии — адаптация с Ультимы, ориентир понедельник' },
   { where: 'Маршрут', text: 'Материалы по P&L (кроме шаблона) — нужны или нет' },
