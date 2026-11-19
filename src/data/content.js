@@ -361,7 +361,7 @@ export const team = [
     { name: 'Михаил Дашкиев', role: 'Главный методолог', photo: 'team/dashkiev.jpg' },
     { name: 'Кирилл Хлуднев', role: 'CEO' },
     { name: 'Евгений Дубровин', role: 'Руководитель программы', photo: 'team/dubrovin.jpg' },
-    { name: 'Кэт Ефимчук', role: 'Директор по продукту', photo: 'team/efimchuk.jpg' },
+    { name: 'Кэт Ефимчук', role: 'Продакт', photo: 'team/efimchuk.jpg' },
     { name: 'Анна Казина', role: 'Менеджер потока' },
   ] },
   { group: 'Трекеры', people: [
