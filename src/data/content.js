@@ -25,7 +25,7 @@ export const program = {
 // ─── Ссылки ─────────────────────────────────────────────────────
 export const links = {
   nda: 'https://drive.google.com/file/d/19aS1kiW7rq79-GQkM44L66mY3HHLRibq/view?usp=drive_link',
-  workbook: 'https://docs.google.com/spreadsheets/d/1yXsDQLTaoLMD1HYpqcyqtypLcIJP3NrgPUv9VWnb6g4/edit?usp=sharing',
+  workbook: 'https://docs.google.com/spreadsheets/d/16E8H61_1aMFaH6KpVP__YjKRi3R44mguCOuMGeiBonU/edit?gid=1736589234#gid=1736589234',
   groupChat: null,
   coachBooking: null,
   manager: null,
@@ -437,7 +437,6 @@ export const draftTodos = [
   { where: 'Старт', text: 'Как записаться к коучу' },
   { where: 'Старт', text: 'Контакт менеджера потока (кнопка «Вопрос», пароль к боту «Мастер Майнд»)' },
   { where: 'Старт', text: 'Видео Евгения Дубровина о программе (1,5 и 6 мин)' },
-  { where: 'Воркбук', text: 'Проверить, что Аня заменила ссылки на вкладке «Шаблоны» на шаблоны Борониной' },
   { where: 'Маршрут', text: 'Рычаги: встреча 4 или 6–8? В заметках к календарю «на 4 встрече рычаги сносим»' },
   { where: 'Маршрут', text: 'Видео РНП и база «Нечто» на GetCourse: есть ли у участников акселератора доступ к школе?' },
   { where: 'Маршрут', text: 'Видео БИ о декомпозиции — запрошено у Борониной' },
