@@ -24,8 +24,8 @@ export const program = {
 
 // ─── Ссылки ─────────────────────────────────────────────────────
 export const links = {
-  nda: null,
-  workbook: null,
+  nda: 'https://drive.google.com/file/d/19aS1kiW7rq79-GQkM44L66mY3HHLRibq/view?usp=drive_link',
+  workbook: 'https://docs.google.com/spreadsheets/d/1yXsDQLTaoLMD1HYpqcyqtypLcIJP3NrgPUv9VWnb6g4/edit?usp=sharing',
   groupChat: null,
   coachBooking: null,
   manager: null,
@@ -40,14 +40,14 @@ export const links = {
   tplDecomp: 'https://docs.google.com/spreadsheets/d/1v6zaA5cKBbt_BgLK4WboDbGB9l8-Z6I0dFTzs-2QBcI/edit?usp=drivesdk', // один файл с финпланом
   tplFinplan: 'https://docs.google.com/spreadsheets/d/1v6zaA5cKBbt_BgLK4WboDbGB9l8-Z6I0dFTzs-2QBcI/edit?usp=drivesdk', // «Финплан + Декомпозиция»
   tplFinmodel: null,
-  tplSs: null,
+  tplSs: 'https://docs.google.com/presentation/d/1MOvrCrH3wAUVWq8EqHZ9sxjw59Gjh7IcxntT_FWR3MU/edit?usp=drive_link',
   plMaterials: null,
   holidayGuide: null,
 
   nechtoBase: 'https://get-nechto.ru/wisdom-base',
   mindloomBot: 'https://t.me/mindloom_report_bot',
   mastermindBot: 'https://t.me/mmmd_1bot',
-  hiringMaterials: null,
+  hiringMaterials: 'https://mdashkiev.com/bonus',
   ciAgent: null,
   marketAgent: null,
 }
@@ -126,8 +126,8 @@ export const agreements = [
 // ─── Воркбук ────────────────────────────────────────────────────
 export const workbook = {
   lead: 'Стартовая точка: что у вас уже есть в цифрах и ключевые данные о компании. По воркбуку трекер и бизнес-инженер готовятся к работе с вами.',
-  deadline: null, // например: «до 24 ноября, встреча 1»
-  submit: null, // куда и как отправить
+  deadline: 'до 24 ноября, до встречи 1',
+  submit: 'Анне Казиной в Telegram, ссылкой на вашу копию',
   blocks: [
     {
       title: 'Что уже есть в цифрах',
@@ -325,9 +325,11 @@ export const bonuses = [
   {
     id: 'md-hiring',
     icon: 'Lock',
-    title: 'Закрытые материалы Михаила Дашкиева по найму топов',
-    text: 'Личный опыт Михаила: как он подходит к найму.',
-    status: 'soon',
+    title: 'Материалы Михаила Дашкиева по работе с ключевыми позициями команды',
+    text: 'Найм CEO и сильных продажников, вопросы для собеседования, мотивация и управление командой.',
+    status: 'request',
+    action: { type: 'link', linkKey: 'hiringMaterials', label: 'Открыть материалы' },
+    note: 'Доступ выдаёт менеджер потока.',
   },
   {
     id: 'nechto',
@@ -429,23 +431,20 @@ export const faq = [
 
 // ─── Черновик: что ещё нужно получить (видно только с ?draft) ───
 export const draftTodos = [
-  { where: 'Старт', text: 'NDA — Аня даст в понедельник' },
+  { where: 'Старт', text: 'NDA: куда отправить подписанный' },
   { where: 'Старт', text: 'Ссылка на чат группы или как её получают' },
   { where: 'Старт', text: 'Как подключить 1–3 сотрудников: в чат, к материалам' },
   { where: 'Старт', text: 'Как записаться к коучу' },
   { where: 'Старт', text: 'Контакт менеджера потока (кнопка «Вопрос», пароль к боту «Мастер Майнд»)' },
   { where: 'Старт', text: 'Видео Евгения Дубровина о программе (1,5 и 6 мин)' },
-  { where: 'Воркбук', text: 'Воркбук — после утверждения трекерами и БИ, ориентир понедельник' },
-  { where: 'Воркбук', text: 'Срок сдачи и куда отправлять; кто читает — трекер, БИ' },
+  { where: 'Воркбук', text: 'Проверить, что Аня заменила ссылки на вкладке «Шаблоны» на шаблоны Борониной' },
   { where: 'Маршрут', text: 'Рычаги: встреча 4 или 6–8? В заметках к календарю «на 4 встрече рычаги сносим»' },
   { where: 'Маршрут', text: 'Видео РНП и база «Нечто» на GetCourse: есть ли у участников акселератора доступ к школе?' },
   { where: 'Маршрут', text: 'Видео БИ о декомпозиции — запрошено у Борониной' },
   { where: 'Маршрут', text: 'Шаблон финмодели — в списке Ани нет' },
-  { where: 'Маршрут', text: 'Шаблон презентации к стратсессии — адаптация с Ультимы, ориентир понедельник' },
   { where: 'Маршрут', text: 'Материалы по P&L (кроме шаблона) — нужны или нет' },
   { where: 'Маршрут', text: 'Инструкция на праздники 29.12–11.01 — в списке Ани нет' },
   { where: 'Бонусы', text: 'ИИ-агенты конкурентной разведки и анализа рынка — ждём' },
-  { where: 'Бонусы', text: 'Материалы Дашкиева по найму топов — запрошены' },
   { where: 'Бонусы', text: 'Закрытые материалы фонда — есть на слайде бонусов, в списке Ани нет' },
   { where: 'Бонусы', text: 'Бот «Мастер Майнд»: на какой срок доступ' },
   { where: 'Команда', text: 'Кто ведёт какую группу; что значит «премиум-трекер»' },
