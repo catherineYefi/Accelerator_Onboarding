@@ -31,7 +31,7 @@ export default function Materials({ go }) {
                 <ul className="space-y-2.5">
                   {g.people.map((p) => (
                     <li key={p.name} className="flex items-start gap-3">
-                      <Avatar name={p.name} />
+                      <Avatar name={p.name} photo={p.photo} />
                       <div className="min-w-0">
                         <p className="text-[14px] font-semibold leading-snug">{p.name}</p>
                         <p className="text-[12.5px] leading-snug text-fg-2">{p.role}</p>
@@ -70,7 +70,19 @@ export default function Materials({ go }) {
   )
 }
 
-function Avatar({ name }) {
+function Avatar({ name, photo }) {
+  if (photo) {
+    return (
+      <img
+        src={import.meta.env.BASE_URL + photo}
+        alt=""
+        width="36"
+        height="36"
+        loading="lazy"
+        className="h-9 w-9 flex-shrink-0 rounded-full border border-line object-cover"
+      />
+    )
+  }
   const initials = name
     .split(' ')
     .map((w) => w[0])
