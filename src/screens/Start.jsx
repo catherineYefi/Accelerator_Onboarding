@@ -14,7 +14,7 @@ export default function Start({ go }) {
       <div className="space-y-8">
         <Stats />
         <div className="space-y-2">
-          <MaterialRow item={{ type: 'video', title: 'Евгений Дубровин о программе', meta: '1,5 мин', linkKey: 'videoAboutShort' }} />
+          <MaterialRow item={{ type: 'video', title: 'Евгений Дубровин о программе', meta: '6 мин', linkKey: 'videoAboutFull' }} />
         </div>
         <Roles />
         <Agreements />

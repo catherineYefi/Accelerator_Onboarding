@@ -25,23 +25,20 @@ export const program = {
 // ─── Ссылки ─────────────────────────────────────────────────────
 export const links = {
   nda: 'https://drive.google.com/file/d/19aS1kiW7rq79-GQkM44L66mY3HHLRibq/view?usp=drive_link',
-  workbook: 'https://docs.google.com/spreadsheets/d/16E8H61_1aMFaH6KpVP__YjKRi3R44mguCOuMGeiBonU/edit?gid=1736589234#gid=1736589234',
-  groupChat: null,
+  workbook: 'https://docs.google.com/spreadsheets/d/16E8H61_1aMFaH6KpVP__YjKRi3R44mguCOuMGeiBonU/edit?gid=1802276798#gid=1802276798',
   coachBooking: null,
   manager: 'https://t.me/kazinaanya', // Анна Казина, менеджер потока
 
-  videoAboutShort: null, // Евгений Дубровин о программе, 1,5 мин
-  videoAboutFull: null, // Евгений Дубровин о программе, 6 мин
-  videoRnp: 'https://get-nechto.ru/pl/teach/control/lesson/view?id=344860746', // эфир Е. Дубровина и А. Цветкова
-  videoDecomp: null, // бизнес-инженер о декомпозиции
+  videoAboutFull: 'https://drive.google.com/file/d/1JZYj3eMB9sId65cBLxKvO-eNAJgQDywI/view?usp=drive_link', // Евгений Дубровин о программе, 6 мин
+  videoRnp: 'https://get-nechto.ru/wisdom-base?wb_entry=108', // эфир Е. Дубровина и А. Цветкова (база «Нечто»)
+  videoDecomp: 'https://drive.google.com/drive/folders/1598gu3VLufLKzIVENM3d6zHtt9WI0-JK?usp=sharing', // уроки по декомпозиции, 2 части
 
-  tplRnp: 'https://docs.google.com/spreadsheets/d/1JVhGIIANmJ4-waN-NNmmcS-AFHbmEUtDrSW5U6Cuzg4/edit?usp=drivesdk',
-  tplPl: 'https://docs.google.com/spreadsheets/d/1JwsukVx4D4s_JnAYQvfPWZv02NyGEu2y3Cjc8r7x0sg/edit?usp=drivesdk',
-  tplDecomp: 'https://docs.google.com/spreadsheets/d/1v6zaA5cKBbt_BgLK4WboDbGB9l8-Z6I0dFTzs-2QBcI/edit?usp=drivesdk', // один файл с финпланом
-  tplFinplan: 'https://docs.google.com/spreadsheets/d/1v6zaA5cKBbt_BgLK4WboDbGB9l8-Z6I0dFTzs-2QBcI/edit?usp=drivesdk', // «Финплан + Декомпозиция»
+  tplRnp: 'https://docs.google.com/spreadsheets/d/1WNEKG5OXLJMZ_JW1Vs56Cg6jvyNoy3tSNW1ly8-su6E/edit?usp=drive_link',
+  tplPl: 'https://docs.google.com/spreadsheets/d/1kylroOLVigjyiB8mX7m4uYxE64b4m7FbVRiqlmRGwrM/edit?usp=drive_link',
+  tplDecomp: 'https://docs.google.com/spreadsheets/d/1hVcIb3n4DF7ElhFT-bt-ZUo_7WhilRpWqhgcwQzVWZI/edit?usp=sharing', // один файл с финпланом
+  tplFinplan: 'https://docs.google.com/spreadsheets/d/1hVcIb3n4DF7ElhFT-bt-ZUo_7WhilRpWqhgcwQzVWZI/edit?usp=sharing', // «Финплан + Декомпозиция»
   tplFinmodel: null,
   tplSs: 'https://docs.google.com/presentation/d/1MOvrCrH3wAUVWq8EqHZ9sxjw59Gjh7IcxntT_FWR3MU/edit?usp=drive_link',
-  plMaterials: null,
   holidayGuide: null,
 
   nechtoBase: 'https://get-nechto.ru/wisdom-base',
@@ -60,14 +57,13 @@ export const checklist = [
   {
     id: 'nda',
     title: 'Подписать NDA',
-    sub: 'Соглашение о конфиденциальности. Подпишите и отправьте менеджеру потока Анне Казиной до того, как отправлять цифры бизнеса.',
+    sub: 'Соглашение о конфиденциальности. Подпишите и отправьте менеджеру потока Анне Казиной — после этого она пришлёт вам ссылку на чат группы.',
     action: { type: 'link', linkKey: 'nda', label: 'Открыть NDA' },
   },
   {
     id: 'chat',
     title: 'Вступить в чат группы и представиться',
-    sub: 'Напишите короткую визитку о себе — шаблон можно скопировать.',
-    action: { type: 'link', linkKey: 'groupChat', label: 'Чат группы' },
+    sub: 'Ссылку пришлёт лично Анна Казина после подписания NDA. В чате напишите короткую визитку о себе — шаблон можно скопировать.',
     vizitka: true,
   },
   {
@@ -84,7 +80,7 @@ export const checklist = [
   {
     id: 'team',
     title: 'Подключить 1–3 ключевых сотрудников',
-    sub: 'Тех, кто будет собирать данные вместе с бизнес-инженером. Без команды решения остаются задачами, которые некому реализовать.',
+    sub: 'Тех, кто будет собирать данные вместе с бизнес-инженером: они работают с вами на сессиях с ним, в чат группы входят только собственники. Без команды решения остаются задачами, которые некому реализовать.',
   },
 ]
 
@@ -162,7 +158,7 @@ export const events = [
   { date: '2026-11-24', title: 'Встреча 1: путь на два месяца', stage: 'rnp' },
   { date: '2026-12-01', title: 'Встреча 2: по РНП', stage: 'rnp' },
   { date: '2026-12-08', title: 'Встреча 3: по факту P&L', stage: 'pl' },
-  { date: '2026-12-15', title: 'Встреча 4: по плану и рычагам', stage: 'decomp' },
+  { date: '2026-12-15', title: 'Встреча 4: по плану', stage: 'decomp' },
   { date: '2026-12-22', title: 'Встреча 5: итоги 2026 и декомпозиция', stage: 'decomp' },
   { date: '2027-01-12', title: 'Встреча 6: по финплану', stage: 'finplan' },
   { date: '2027-01-19', title: 'Встреча 7: по финмодели', stage: 'finmodel' },
@@ -210,7 +206,7 @@ export const stages = [
     artifact: { title: 'P&L', text: 'Прибыль и расходы в управленческом формате.' },
     bi: ['Факт P&L'],
     materials: [
-      { type: 'doc', title: 'Материалы по P&L', linkKey: 'plMaterials' },
+      { type: 'video', title: 'Эфир Евгения Дубровина и А. Цветкова', linkKey: 'videoRnp' },
       { type: 'template', title: 'Шаблон P&L', linkKey: 'tplPl' },
     ],
   },
@@ -218,11 +214,11 @@ export const stages = [
     id: 'decomp',
     title: 'Декомпозиция',
     dates: '15 и 22 декабря',
-    summary: 'План, рычаги и декомпозиция, итоги 2026 года.',
+    summary: 'План и декомпозиция, итоги 2026 года.',
     artifact: { title: 'Декомпозиция', text: 'Воронка, продажи, чек × покупки → доходы, расходы, дивиденды.' },
     bi: ['План РНП (выручка) или P&L (расходы)', 'Декомпозиция'],
     materials: [
-      { type: 'video', title: 'Бизнес-инженер о декомпозиции', linkKey: 'videoDecomp', hint: 'Посмотрите до встречи 4' },
+      { type: 'video', title: 'Уроки по декомпозиции', meta: '2 части, ≈25 мин', linkKey: 'videoDecomp', hint: 'Посмотрите до встречи 4' },
       { type: 'template', title: 'Шаблон декомпозиции', linkKey: 'tplDecomp' },
     ],
   },
@@ -230,7 +226,7 @@ export const stages = [
     id: 'finplan',
     title: 'Финплан',
     dates: '12 января',
-    summary: 'Финплан на 2027 год.',
+    summary: 'Финплан на 2027 год. На встречах 6–8 работаем с рычагами — когда документы по оцифровке собраны и приняты трекером.',
     artifact: { title: 'Финплан', text: 'План на текущих рычагах.' },
     bi: ['Финплан на 2027 год'],
     materials: [{ type: 'template', title: 'Шаблон финплана', linkKey: 'tplFinplan' }],
@@ -315,6 +311,7 @@ export const bonuses = [
     text: 'Материалы «Нечто»: маркетинг, операционка, команда.',
     status: 'available',
     action: { type: 'link', linkKey: 'nechtoBase', label: 'Открыть базу' },
+    note: 'Доступ открыт на вашу почту. Не получается войти — напишите менеджеру потока.',
   },
 ]
 
@@ -336,10 +333,9 @@ export const library = [
   {
     title: 'Видео',
     items: [
-      { type: 'video', title: 'Евгений Дубровин о программе', meta: '1,5 мин', linkKey: 'videoAboutShort' },
-      { type: 'video', title: 'Евгений Дубровин о программе, полная версия', meta: '6 мин', linkKey: 'videoAboutFull' },
+      { type: 'video', title: 'Евгений Дубровин о программе', meta: '6 мин', linkKey: 'videoAboutFull' },
       { type: 'video', title: 'РНП: эфир Евгения Дубровина и А. Цветкова', linkKey: 'videoRnp' },
-      { type: 'video', title: 'Бизнес-инженер о декомпозиции', linkKey: 'videoDecomp' },
+      { type: 'video', title: 'Уроки по декомпозиции', meta: '2 части, ≈25 мин', linkKey: 'videoDecomp' },
     ],
   },
   {
@@ -412,16 +408,9 @@ export const faq = [
 
 // ─── Черновик: что ещё нужно получить (видно только с ?draft) ───
 export const draftTodos = [
-  { where: 'Старт', text: 'Ссылка на чат группы или как её получают' },
-  { where: 'Старт', text: 'Как подключить 1–3 сотрудников: в чат, к материалам' },
   { where: 'Старт', text: 'Как записаться к коучу' },
-  { where: 'Старт', text: 'Видео Евгения Дубровина о программе (1,5 и 6 мин)' },
-  { where: 'Маршрут', text: 'Рычаги: встреча 4 или 6–8? В заметках к календарю «на 4 встрече рычаги сносим»' },
-  { where: 'Маршрут', text: 'Видео РНП и база «Нечто» на GetCourse: есть ли у участников акселератора доступ к школе?' },
-  { where: 'Маршрут', text: 'Видео БИ о декомпозиции — запрошено у Борониной' },
-  { where: 'Маршрут', text: 'Шаблон финмодели — в списке Ани нет' },
-  { where: 'Маршрут', text: 'Материалы по P&L (кроме шаблона) — нужны или нет' },
-  { where: 'Маршрут', text: 'Инструкция на праздники 29.12–11.01 — в списке Ани нет' },
+  { where: 'Маршрут', text: 'Шаблон финмодели (к 19.01)' },
+  { where: 'Маршрут', text: 'Инструкция на праздники 29.12–11.01 — текст Ани есть, ждёт ОС Кэт' },
   { where: 'Бонусы', text: 'Бот «Мастер Майнд»: на какой срок доступ' },
   { where: 'Команда', text: 'Кто ведёт какую группу; что значит «премиум-трекер» — в процессе распределения' },
 ]
