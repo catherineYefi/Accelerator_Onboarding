@@ -59,7 +59,7 @@ function NowCard({ go }) {
   if (now.phase === 'holiday') {
     eyebrow = 'Праздники · встреч нет'
     title = 'Ведёте РНП и P&L сами'
-    text = `Следующая встреча — ${formatDay(now.next.date, { weekday: true })}: ${now.next.title.toLowerCase()}.`
+    text = `После праздников — ${now.next.title.toLowerCase()}. Дату и время сообщим в чате группы.`
     cta = { label: 'Что делать в праздники', onClick: () => go('route', holiday.id) }
   } else if (now.phase === 'after') {
     eyebrow = 'Программа пройдена'
@@ -67,10 +67,9 @@ function NowCard({ go }) {
     text = 'Все материалы программы остаются в разделе «Материалы».'
     cta = { label: 'Материалы', onClick: () => go('materials') }
   } else {
-    eyebrow = `Сейчас · ${stage?.title ?? ''}`
-    title = now.next.title
-    const when = now.isToday ? 'сегодня' : `через ${now.daysLeft} ${plural(now.daysLeft, 'день', 'дня', 'дней')}`
-    text = `${now.next.approx ? '≈ ' : ''}${formatDay(now.next.date, { weekday: true })} · ${when}. Время и ссылка — в чате группы.`
+    eyebrow = `Сейчас · ${stage?.dates ?? ''}`
+    title = stage?.title ?? ''
+    text = `${stage?.summary ?? ''} Дни и время встреч вашей группы — в чате группы.`
     cta = { label: 'Открыть этап', onClick: () => go('route', now.stageId) }
   }
 

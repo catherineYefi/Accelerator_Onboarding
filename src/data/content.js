@@ -17,9 +17,9 @@ export const program = {
     { value: '8', label: 'встреч с трекером в группе' },
     { value: '16', label: 'часов с бизнес-инженером' },
     { value: '4', label: 'личные сессии с коучем по запросу' },
-    { value: '4', label: 'часа итоговой стратсессии' },
+    { value: '1', label: 'итоговая стратсессия' },
   ],
-  scheduleNote: 'Даты — ориентир. Точное расписание вашей группы — в чате группы.',
+  scheduleNote: 'Дни и время встреч у каждой группы свои — расписание вашей группы в чате группы.',
 }
 
 // ─── Ссылки ─────────────────────────────────────────────────────
@@ -36,7 +36,6 @@ export const links = {
   tplPl: 'https://docs.google.com/spreadsheets/d/1kylroOLVigjyiB8mX7m4uYxE64b4m7FbVRiqlmRGwrM/edit?usp=drive_link',
   tplDecomp: 'https://docs.google.com/spreadsheets/d/1hVcIb3n4DF7ElhFT-bt-ZUo_7WhilRpWqhgcwQzVWZI/edit?usp=sharing', // один файл с финпланом
   tplFinplan: 'https://docs.google.com/spreadsheets/d/1hVcIb3n4DF7ElhFT-bt-ZUo_7WhilRpWqhgcwQzVWZI/edit?usp=sharing', // «Финплан + Декомпозиция»
-  tplFinmodel: null,
   tplSs: 'https://docs.google.com/presentation/d/1MOvrCrH3wAUVWq8EqHZ9sxjw59Gjh7IcxntT_FWR3MU/edit?usp=drive_link',
 
   nechtoBase: 'https://get-nechto.ru/wisdom-base',
@@ -150,19 +149,20 @@ export const workbook = {
 }
 
 // ─── Маршрут ────────────────────────────────────────────────────
-// Встречи — по календарю первого потока.
+// Встречи. Дни и время у групп разные, поэтому даты на странице НЕ показываются.
+// date — воскресенье недели, на которой проходит встреча у всех групп; нужно только для подсветки текущего этапа.
 // Что собираете с БИ на неделе встречи N, готовит встречу N+1 — поэтому пункты БИ стоят в этапе следующей встречи.
 export const events = [
   { date: '2026-11-17', title: 'Welcome-встреча', stage: 'org' },
-  { date: '2026-11-24', title: 'Встреча 1: путь на два месяца', stage: 'rnp' },
-  { date: '2026-12-01', title: 'Встреча 2: по РНП', stage: 'rnp' },
-  { date: '2026-12-08', title: 'Встреча 3: по факту P&L', stage: 'pl' },
-  { date: '2026-12-15', title: 'Встреча 4: по плану', stage: 'decomp' },
-  { date: '2026-12-22', title: 'Встреча 5: итоги 2026 и декомпозиция', stage: 'decomp' },
-  { date: '2027-01-12', title: 'Встреча 6: по финплану', stage: 'finplan' },
-  { date: '2027-01-19', title: 'Встреча 7: по финмодели', stage: 'finmodel' },
-  { date: '2027-01-26', title: 'Встреча 8: вся картина целиком', stage: 'ss' },
-  { date: '2027-02-02', title: 'Стратегическая сессия', stage: 'final', approx: true },
+  { date: '2026-11-29', title: 'Встреча 1: путь на два месяца', stage: 'rnp' },
+  { date: '2026-12-06', title: 'Встреча 2: по РНП', stage: 'rnp' },
+  { date: '2026-12-13', title: 'Встреча 3: по факту P&L', stage: 'pl' },
+  { date: '2026-12-20', title: 'Встреча 4: по плану', stage: 'decomp' },
+  { date: '2026-12-27', title: 'Встреча 5: итоги 2026 и декомпозиция', stage: 'decomp' },
+  { date: '2027-01-17', title: 'Встреча 6: по финплану', stage: 'finplan' },
+  { date: '2027-01-24', title: 'Встреча 7: поиск рычагов', stage: 'finmodel' },
+  { date: '2027-01-31', title: 'Встреча 8: вся картина целиком', stage: 'ss' },
+  { date: '2027-02-08', title: 'Итоговая стратегическая сессия', stage: 'final' },
 ]
 
 export const holiday = {
@@ -173,7 +173,7 @@ export const holiday = {
   text: 'Встреч с трекером нет: это время для отдыха и самостоятельной работы.',
   todo: [
     'Ведите РНП: вносите факт по метрикам каждый день, пусть даже в упрощённом виде.',
-    'Заполните P&L за декабрь, чтобы к встрече 12 января были свежие цифры.',
+    'Заполните P&L за декабрь, чтобы к первой встрече после праздников были свежие цифры.',
   ],
 }
 
@@ -190,7 +190,7 @@ export const stages = [
   {
     id: 'rnp',
     title: 'РНП',
-    dates: '24 ноября и 1 декабря',
+    dates: 'Встречи 1–2',
     summary: 'Собираем факт РНП вместе с командой.',
     artifact: { title: 'РНП', text: 'Метрики, рычаги, нормативы, план и факт.' },
     bi: ['Факт РНП с командой'],
@@ -202,7 +202,7 @@ export const stages = [
   {
     id: 'pl',
     title: 'P&L',
-    dates: '8 декабря',
+    dates: 'Встреча 3',
     summary: 'Собираем факт P&L.',
     artifact: { title: 'P&L', text: 'Прибыль и расходы в управленческом формате.' },
     bi: ['Факт P&L'],
@@ -214,7 +214,7 @@ export const stages = [
   {
     id: 'decomp',
     title: 'Декомпозиция',
-    dates: '15 и 22 декабря',
+    dates: 'Встречи 4–5',
     summary: 'План и декомпозиция, итоги 2026 года.',
     artifact: { title: 'Декомпозиция', text: 'Воронка, продажи, чек × покупки → доходы, расходы, дивиденды.' },
     bi: ['План РНП (выручка) или P&L (расходы)', 'Декомпозиция'],
@@ -226,7 +226,7 @@ export const stages = [
   {
     id: 'finplan',
     title: 'Финплан',
-    dates: '12 января',
+    dates: 'Встреча 6',
     summary: 'Финплан на 2027 год. На встречах 6–8 работаем с рычагами — когда документы по оцифровке собраны и приняты трекером.',
     artifact: { title: 'Финплан', text: 'План на текущих рычагах.' },
     bi: ['Финплан на 2027 год'],
@@ -234,17 +234,14 @@ export const stages = [
   },
   {
     id: 'finmodel',
-    title: 'Финмодель',
-    dates: '19 января',
-    summary: 'Финмодель 2.0.',
-    artifact: { title: 'Финмодель с целевыми параметрами', text: 'Сценарий роста бизнеса.' },
-    bi: ['Финмодель 2.0'],
-    materials: [{ type: 'template', title: 'Шаблон финмодели', linkKey: 'tplFinmodel' }],
+    title: 'Поиск рычагов',
+    dates: 'Встреча 7',
+    summary: 'Ищем рычаги, которые ведут к модели следующего шага.',
   },
   {
     id: 'ss',
     title: 'Подготовка к стратсессии',
-    dates: '26 января',
+    dates: 'Встреча 8',
     summary: 'Модель следующего шага и вся картина целиком.',
     bi: ['Модель следующего шага', 'Подготовка к стратсессии'],
     materials: [{ type: 'template', title: 'Шаблон презентации к стратсессии', linkKey: 'tplSs' }],
@@ -252,8 +249,8 @@ export const stages = [
   {
     id: 'final',
     title: 'Стратегическая сессия',
-    dates: '≈ 2 февраля',
-    summary: 'Онлайн, 4 часа, вся группа с трекером.',
+    dates: 'После встречи 8',
+    summary: 'Онлайн, вся группа с трекером. Дату сообщим в чате группы.',
     artifact: { title: 'Дорожная карта', text: 'С паспортами проектов на реализацию в предстоящем году.' },
     agenda: [
       { title: 'Где вы сейчас', text: 'По собранным цифрам, без догадок.' },
@@ -346,7 +343,6 @@ export const library = [
       { type: 'template', title: 'P&L', linkKey: 'tplPl' },
       { type: 'template', title: 'Декомпозиция', linkKey: 'tplDecomp' },
       { type: 'template', title: 'Финплан', linkKey: 'tplFinplan' },
-      { type: 'template', title: 'Финмодель', linkKey: 'tplFinmodel' },
       { type: 'template', title: 'Презентация к стратсессии', linkKey: 'tplSs' },
     ],
   },
@@ -409,5 +405,4 @@ export const faq = [
 
 // ─── Черновик: что ещё нужно получить (видно только с ?draft) ───
 export const draftTodos = [
-  { where: 'Маршрут', text: 'Шаблон финмодели — будет позже, нужен к 19.01' },
 ]

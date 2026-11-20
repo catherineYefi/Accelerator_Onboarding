@@ -29,7 +29,7 @@ export default function RouteScreen({ go, focus }) {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <p className="label-caps mb-3">Маршрут · 17 ноября — 2 февраля</p>
+      <p className="label-caps mb-3">Маршрут · 8 встреч и итоговая стратсессия</p>
       <h1 className="h-display text-[26px] sm:text-[32px]">
         От цифр <b>к дорожной карте</b>
       </h1>
@@ -135,12 +135,9 @@ function StageCard({ stage, status, open, onToggle, go }) {
               <Block title="Встречи с трекером">
                 <ul className="space-y-1.5">
                   {stageEvents.map((e) => (
-                    <li key={e.date} className="flex gap-3 text-[14px]">
-                      <span className="w-[92px] flex-shrink-0 font-semibold text-lime/90">
-                        {e.approx ? '≈ ' : ''}
-                        {formatDay(e.date)}
-                      </span>
-                      <span className="text-fg">{e.title}</span>
+                    <li key={e.date} className="flex gap-2 text-[14px] text-fg">
+                      <span className="mt-[9px] h-1 w-1 flex-shrink-0 rounded-full bg-lime" aria-hidden="true" />
+                      {e.title}
                     </li>
                   ))}
                 </ul>
