@@ -352,7 +352,7 @@ export const library = [
 export const team = [
   { group: 'Программа', people: [
     { name: 'Михаил Дашкиев', role: 'Главный методолог', photo: 'team/dashkiev.jpg' },
-    { name: 'Кирилл Хлуднев', role: 'CEO' },
+    { name: 'Кирилл Хлуднев', role: 'CEO', photo: 'team/khludnev.jpg' },
     { name: 'Евгений Дубровин', role: 'Руководитель программы', photo: 'team/dubrovin.jpg' },
     { name: 'Кэт Ефимчук', role: 'Продакт', photo: 'team/efimchuk.jpg' },
     { name: 'Анна Казина', role: 'Куратор потока', photo: 'team/kazina.jpg' },
