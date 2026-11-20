@@ -2,7 +2,7 @@
 // АКСЕЛЕРАТОР — ОНБОРДИНГ УЧАСТНИКА
 // Единственный источник текстов, дат и ссылок.
 // Ссылка = null → на странице кнопка «Скоро», в режиме ?draft она подсвечена.
-// Источник формулировок — презентация акселератора (первый поток) и ОС менеджера потока.
+// Источник формулировок — презентация акселератора (первый поток), презентация оргэфира 17.11 и ОС куратора потока.
 // ═══════════════════════════════════════════════════════════════
 
 export const program = {
@@ -26,7 +26,7 @@ export const program = {
 export const links = {
   nda: 'https://drive.google.com/file/d/19aS1kiW7rq79-GQkM44L66mY3HHLRibq/view?usp=drive_link',
   workbook: 'https://docs.google.com/spreadsheets/d/16E8H61_1aMFaH6KpVP__YjKRi3R44mguCOuMGeiBonU/edit?gid=1802276798#gid=1802276798',
-  manager: 'https://t.me/kazinaanya', // Анна Казина, менеджер потока
+  manager: 'https://t.me/kazinaanya', // Анна Казина, куратор потока
 
   videoAboutFull: 'https://drive.google.com/file/d/1JZYj3eMB9sId65cBLxKvO-eNAJgQDywI/view?usp=drive_link', // Евгений Дубровин о программе, 6 мин
   videoRnp: 'https://get-nechto.ru/wisdom-base?wb_entry=108', // эфир Е. Дубровина и А. Цветкова (база «Нечто»)
@@ -38,7 +38,6 @@ export const links = {
   tplFinplan: 'https://docs.google.com/spreadsheets/d/1hVcIb3n4DF7ElhFT-bt-ZUo_7WhilRpWqhgcwQzVWZI/edit?usp=sharing', // «Финплан + Декомпозиция»
   tplFinmodel: null,
   tplSs: 'https://docs.google.com/presentation/d/1MOvrCrH3wAUVWq8EqHZ9sxjw59Gjh7IcxntT_FWR3MU/edit?usp=drive_link',
-  holidayGuide: null,
 
   nechtoBase: 'https://get-nechto.ru/wisdom-base',
   mindloomBot: 'https://t.me/mindloom_report_bot',
@@ -56,7 +55,7 @@ export const checklist = [
   {
     id: 'nda',
     title: 'Подписать NDA',
-    sub: 'Соглашение о конфиденциальности. Подпишите и отправьте менеджеру потока Анне Казиной — после этого она пришлёт вам ссылку на чат группы.',
+    sub: 'Соглашение о конфиденциальности. Подпишите и отправьте куратору потока Анне Казиной — после этого она пришлёт вам ссылку на чат группы.',
     action: { type: 'link', linkKey: 'nda', label: 'Открыть NDA' },
   },
   {
@@ -171,9 +170,11 @@ export const holiday = {
   from: '2026-12-29',
   to: '2027-01-11',
   title: 'Праздники',
-  text: 'Встреч нет. Ведёте РНП и P&L сами.',
-  linkKey: 'holidayGuide',
-  linkLabel: 'Как вести РНП и P&L самостоятельно',
+  text: 'Встреч с трекером нет: это время для отдыха и самостоятельной работы.',
+  todo: [
+    'Ведите РНП: вносите факт по метрикам каждый день, пусть даже в упрощённом виде.',
+    'Заполните P&L за декабрь, чтобы к встрече 12 января были свежие цифры.',
+  ],
 }
 
 export const stages = [
@@ -293,7 +294,7 @@ export const bonuses = [
     text: 'Разбирает ваш бизнес по методике мастермайнда Михаила Дашкиева.',
     status: 'available',
     action: { type: 'link', linkKey: 'mastermindBot', label: 'Открыть бота' },
-    note: 'Доступ на 3 месяца. Пароль для входа выдаёт менеджер потока.',
+    note: 'Доступ на 3 месяца. Пароль для входа выдаёт куратор потока.',
   },
   {
     id: 'md-hiring',
@@ -302,7 +303,7 @@ export const bonuses = [
     text: 'Найм CEO и сильных продажников, вопросы для собеседования, мотивация и управление командой.',
     status: 'request',
     action: { type: 'link', linkKey: 'hiringMaterials', label: 'Открыть материалы' },
-    note: 'Доступ выдаёт менеджер потока.',
+    note: 'Доступ выдаёт куратор потока.',
   },
   {
     id: 'nechto',
@@ -311,7 +312,7 @@ export const bonuses = [
     text: 'Материалы «Нечто»: маркетинг, операционка, команда.',
     status: 'available',
     action: { type: 'link', linkKey: 'nechtoBase', label: 'Открыть базу' },
-    note: 'Доступ открыт на вашу почту. Не получается войти — напишите менеджеру потока.',
+    note: 'Доступ открыт на вашу почту. Не получается войти — напишите куратору потока.',
   },
 ]
 
@@ -358,12 +359,12 @@ export const team = [
     { name: 'Кирилл Хлуднев', role: 'CEO' },
     { name: 'Евгений Дубровин', role: 'Руководитель программы', photo: 'team/dubrovin.jpg' },
     { name: 'Кэт Ефимчук', role: 'Продакт', photo: 'team/efimchuk.jpg' },
-    { name: 'Анна Казина', role: 'Менеджер потока', photo: 'team/kazina.jpg' },
+    { name: 'Анна Казина', role: 'Куратор потока', photo: 'team/kazina.jpg' },
   ] },
   { group: 'Трекеры', people: [
     { name: 'Александр Скробин', role: 'Продажи и управление', photo: 'team/skrobin.jpg' },
     { name: 'Илья Кривогузов', role: 'Финансы и системное управление', photo: 'team/krivoguzov.jpg' },
-    { name: 'Андрей Калашников', role: 'Премиум-трекер', photo: 'team/kalashnikov.jpg' },
+    { name: 'Андрей Калашников', role: 'Стратегия', photo: 'team/kalashnikov.jpg' },
   ] },
   { group: 'Бизнес-инженеры', people: [
     { name: 'Екатерина Боронина', role: 'Руководитель бизнес-инженеров', photo: 'team/boronina.jpg' },
@@ -409,6 +410,4 @@ export const faq = [
 // ─── Черновик: что ещё нужно получить (видно только с ?draft) ───
 export const draftTodos = [
   { where: 'Маршрут', text: 'Шаблон финмодели — будет позже, нужен к 19.01' },
-  { where: 'Маршрут', text: 'Инструкция на праздники 29.12–11.01 — текст Ани есть, ждёт ОС Кэт' },
-  { where: 'Команда', text: 'Подпись Калашникова: «Премиум-трекер» или «Стратегия» (как в презентации оргэфира)' },
 ]

@@ -230,11 +230,23 @@ function HolidayCard({ item, status }) {
           </div>
           <p className="text-[15px] font-semibold">{item.title}</p>
           <p className="text-[13.5px] text-fg-2">{item.text}</p>
-          <div className="mt-3">
-            <LinkButton linkKey={item.linkKey} variant="secondary">
-              {item.linkLabel}
-            </LinkButton>
-          </div>
+          {item.todo?.length > 0 && (
+            <ul className="mt-2 space-y-1.5">
+              {item.todo.map((t) => (
+                <li key={t} className="flex gap-2 text-[13.5px] leading-relaxed text-fg-2">
+                  <span className="mt-[9px] h-1 w-1 flex-shrink-0 rounded-full bg-lime" aria-hidden="true" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {item.linkKey && (
+            <div className="mt-3">
+              <LinkButton linkKey={item.linkKey} variant="secondary">
+                {item.linkLabel}
+              </LinkButton>
+            </div>
+          )}
         </div>
       </div>
     </div>
