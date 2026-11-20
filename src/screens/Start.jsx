@@ -246,6 +246,7 @@ function Roles() {
                 <p className="text-[15px] font-semibold leading-snug">{r.title}</p>
                 <p className="text-[12.5px] font-semibold text-lime/90">{r.meta}</p>
                 <p className="mt-1.5 text-[13.5px] leading-relaxed text-fg-2">{r.text}</p>
+                {r.note && <p className="mt-1.5 text-[12.5px] leading-snug text-fg-3">{r.note}</p>}
                 {r.action && (
                   <div className="mt-3">
                     <LinkButton linkKey={r.action.linkKey} variant="secondary">

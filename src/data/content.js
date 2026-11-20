@@ -26,7 +26,6 @@ export const program = {
 export const links = {
   nda: 'https://drive.google.com/file/d/19aS1kiW7rq79-GQkM44L66mY3HHLRibq/view?usp=drive_link',
   workbook: 'https://docs.google.com/spreadsheets/d/16E8H61_1aMFaH6KpVP__YjKRi3R44mguCOuMGeiBonU/edit?gid=1802276798#gid=1802276798',
-  coachBooking: null,
   manager: 'https://t.me/kazinaanya', // Анна Казина, менеджер потока
 
   videoAboutFull: 'https://drive.google.com/file/d/1JZYj3eMB9sId65cBLxKvO-eNAJgQDywI/view?usp=drive_link', // Евгений Дубровин о программе, 6 мин
@@ -106,7 +105,8 @@ export const roles = [
     title: 'Коуч — по желанию',
     meta: '4 личные сессии по запросу',
     text: 'Чего вы на самом деле хотите, какую роль хотите занимать в бизнесе, какие ограничения мешают двигаться. Всё сказанное — между вами.',
-    action: { linkKey: 'coachBooking', label: 'Записаться к коучу' },
+    action: { linkKey: 'manager', label: 'Записаться через Анну' },
+    note: 'Анна Казина предложит слоты и запишет вас.',
   },
 ]
 
@@ -293,7 +293,7 @@ export const bonuses = [
     text: 'Разбирает ваш бизнес по методике мастермайнда Михаила Дашкиева.',
     status: 'available',
     action: { type: 'link', linkKey: 'mastermindBot', label: 'Открыть бота' },
-    note: 'Пароль для входа выдаёт менеджер потока.',
+    note: 'Доступ на 3 месяца. Пароль для входа выдаёт менеджер потока.',
   },
   {
     id: 'md-hiring',
@@ -408,9 +408,7 @@ export const faq = [
 
 // ─── Черновик: что ещё нужно получить (видно только с ?draft) ───
 export const draftTodos = [
-  { where: 'Старт', text: 'Как записаться к коучу' },
-  { where: 'Маршрут', text: 'Шаблон финмодели (к 19.01)' },
+  { where: 'Маршрут', text: 'Шаблон финмодели — будет позже, нужен к 19.01' },
   { where: 'Маршрут', text: 'Инструкция на праздники 29.12–11.01 — текст Ани есть, ждёт ОС Кэт' },
-  { where: 'Бонусы', text: 'Бот «Мастер Майнд»: на какой срок доступ' },
-  { where: 'Команда', text: 'Кто ведёт какую группу; что значит «премиум-трекер» — в процессе распределения' },
+  { where: 'Команда', text: 'Подпись Калашникова: «Премиум-трекер» или «Стратегия» (как в презентации оргэфира)' },
 ]
